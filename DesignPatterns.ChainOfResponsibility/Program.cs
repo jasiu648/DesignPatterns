@@ -21,9 +21,21 @@
     {
         public override void Handle(ChainRequest chainRequest)
         {
+            if(chainRequest.IsImportant())
+                chainRequest.PrintMessage();
 
+            if (this.nextHandler is not null)
+                this.nextHandler.Handle(chainRequest);
+        }
+    }
 
-            if(this.nextHandler is not null)
+    public class AllMessageHandler : BaseChainHandler
+    {
+        public override void Handle(ChainRequest chainRequest)
+        {
+            chainRequest.PrintMessage();
+
+            if (this.nextHandler is not null)
                 this.nextHandler.Handle(chainRequest);
         }
     }
@@ -70,6 +82,22 @@
         public override bool IsImportant()
         {
             return false;
+        }
+    }
+
+    public class Program
+    {
+        public static void Main()
+        {
+            var importantHandlerInstance = new ImportantMessageHandler();
+            var allHandlerInstance = new AllMessageHandler();
+
+            var messegeFromDev = new DevRequest(334, "I need access to Azure");
+            var messegeFromHR = new HRRequest(12, "Pizza in Open-Space!");
+
+            importantHandlerInstance.SetNext(allHandlerInstance);
+            importantHandlerInstance.Handle(messegeFromHR);
+            importantHandlerInstance.Handle(messegeFromDev);
         }
     }
 }

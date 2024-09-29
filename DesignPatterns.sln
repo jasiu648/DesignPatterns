@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns.Proxy", "Des
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns.ChainOfResponsibility", "DesignPatterns.ChainOfResponsibility\DesignPatterns.ChainOfResponsibility.csproj", "{2A358228-915A-4265-90AE-28C9BF02BD94}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.AbstractFactory", "DesignPatterns.AbstractFactory\DesignPatterns.AbstractFactory.csproj", "{9CEA9F18-9F69-4EAE-9561-EE8758A7509E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{2A358228-915A-4265-90AE-28C9BF02BD94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A358228-915A-4265-90AE-28C9BF02BD94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A358228-915A-4265-90AE-28C9BF02BD94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CEA9F18-9F69-4EAE-9561-EE8758A7509E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CEA9F18-9F69-4EAE-9561-EE8758A7509E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CEA9F18-9F69-4EAE-9561-EE8758A7509E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CEA9F18-9F69-4EAE-9561-EE8758A7509E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +75,7 @@ Global
 		{6B76CC84-8EE5-4D85-97AE-585F632F6EF0} = {513D9478-A8CF-4A8A-83A0-DE88E4F9BF88}
 		{CCF58B53-239E-4FA3-9723-9D6184C5536E} = {513D9478-A8CF-4A8A-83A0-DE88E4F9BF88}
 		{2A358228-915A-4265-90AE-28C9BF02BD94} = {DE045232-BB00-4DE1-A553-F86844BD8BF2}
+		{9CEA9F18-9F69-4EAE-9561-EE8758A7509E} = {25BA4D15-0A7E-4B6C-B7C8-49EC0987959E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {74C29943-52BA-47AF-853A-E2832193995A}
