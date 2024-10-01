@@ -140,7 +140,7 @@ public class BinarySearchTree<T> : IterableCollection<T> where T : IComparable<T
         return minv;
     }
 
-    public Iterator CreateIterator()
+    public IIterator CreateIterator()
     {
         return new InOrderIterator<T>(this);
     }

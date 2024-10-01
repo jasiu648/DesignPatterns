@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns.Iterator
 {
-    public interface Iterator
+    public interface IIterator
     {
         public object GetNext();
         public bool HasMore();
@@ -15,10 +15,10 @@ namespace DesignPatterns.Iterator
 
     public interface IterableCollection<T>
     {
-        public Iterator CreateIterator();
+        public IIterator CreateIterator();
     }
 
-    public class InOrderIterator<T> : Iterator where T : IComparable<T>
+    public class InOrderIterator<T> : IIterator where T : IComparable<T>
     {
         private Stack<Node<T>> stack;
         private void PushAllLeft(Node<T> node)
@@ -51,7 +51,7 @@ namespace DesignPatterns.Iterator
         }
     }
 
-    public class PreOrderIterator : Iterator
+    public class PreOrderIterator : IIterator
     {
         public object GetNext()
         {
@@ -63,7 +63,7 @@ namespace DesignPatterns.Iterator
             throw new NotImplementedException();
         }
     }
-    public class PostOrderIterator : Iterator
+    public class PostOrderIterator : IIterator
     {
         public object GetNext()
         {
