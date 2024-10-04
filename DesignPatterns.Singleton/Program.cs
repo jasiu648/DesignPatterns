@@ -2,7 +2,7 @@
 
 namespace DesignPatterns.Singleton
 {
-    internal class DatabaseSingleton
+    internal sealed class DatabaseSingleton
     {
         private static DatabaseSingleton instance;
         public string Value { get; set; }

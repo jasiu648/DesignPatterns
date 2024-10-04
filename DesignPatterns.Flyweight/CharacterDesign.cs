@@ -38,22 +38,25 @@ namespace DesignPatterns.Flyweight
         }
     }
 
-    public class CharacterDesignCollection
+    public static class CharacterDesignCollection
     {
-        private HashSet<CharacterDesign> _characterDesignCollection;
-        public CharacterDesignCollection()
+        public static List<CharacterDesign> _characterDesignCollection;
+        static CharacterDesignCollection()
         {
-            _characterDesignCollection = new HashSet<CharacterDesign>();
+            _characterDesignCollection = new List<CharacterDesign>();
         }
-        public CharacterDesign GetDesignType(int color, int width, int height)
+        public static CharacterDesign GetDesignType(int color, int width, int height)
         {
-            if(_characterDesignCollection.Contains(new CharacterDesign(color, width, height)))
+            var tempType = new CharacterDesign(color, width, height);
+            int index = _characterDesignCollection.IndexOf(tempType);
+
+            if (index == -1)
             {
-                return null;
+                _characterDesignCollection.Add(tempType);
+                return _characterDesignCollection.Last();
             }
-            return null;
+
+            return _characterDesignCollection[index];
         }
-
-
     }
 }
